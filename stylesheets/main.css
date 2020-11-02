@@ -1,0 +1,1228 @@
+/******************************************** GENERAL ************************************************/
+body{
+    font-family: 'Montserrat';
+    overflow-x: hidden; /* per togliere lo scroll orizzontale */
+   
+    
+   
+    
+}
+
+*{
+    box-sizing: border-box;
+   
+}
+
+html{
+
+    scroll-behavior: smooth; /* scroll della pagina */
+   
+    
+
+    
+}
+
+
+
+/* è una classe (con nome a piacere) che serve per indicare in quale sezione del sito ci troviamo
+   (richiamata qui in CSS come .active e aggiunta nel codice HTML come class="active"
+   dentro il link <a .....></a, dopo href=".......")
+
+*/
+.active{
+
+    background: #0ACE99;
+    border-radius: 3px;
+
+}
+
+
+
+/* Il clearfix con lo pseudo-elemento ::after va applicato alla sezione che non vogliamo collassi */
+
+.clearfix::after{
+    content:"";
+    display: block;
+    clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Titolo del sito, dentro il tag header (nel file index.html)*/
+.header-title{
+    color: #fff;
+    text-align: center;
+    padding-left: 10px;
+    font-size: 26px;
+    font-family: 'Lobster', cursive;
+    
+}
+
+.logo-container{
+
+    width: 50px;
+
+}
+
+.logo-container img{
+
+    margin-left: 160px;
+}
+
+
+
+
+
+/******************************** header ********************************************/
+
+header{
+    
+    background: #00F260;  
+    background: -webkit-linear-gradient(to right, #0575E6, #00F260);  
+    background: linear-gradient(to right, #0575E6, #00F260); 
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(242,242, 242, .5);
+                
+    
+}
+
+/*****************************************************************************************************************/
+
+
+
+
+
+
+/**************************** container *****************************/
+
+/* container contenente il video, sotto la sezione contact */
+.container-video{
+
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+/* container contenente l'header */
+.container{
+
+    max-width: 970px;
+    margin: 0 auto;
+}
+
+
+
+/*********************************************************/
+
+/* immagini dei social, dentro il footer */
+img{
+    width: 90%;
+}
+
+/* Titolo degli h1 delle classi info e contacts */
+.title{
+    color: #000000;
+    font-size: 2.2rem;
+    text-align: left;
+}
+
+/* sono i link della classe contacts */
+a{
+    color: #000000;
+}
+
+/* contenuto principale del sito, che racchiude il container, la sezione contact, ecc... */
+main{
+    
+    
+    min-height: calc(100vh - 70px - 138.5px);
+    padding-top: 70px;
+
+     /* vh = unità di misura equivalente all'1% dell'altezza della finestra del browser */ 
+      
+/* 
+       80px(30px + 20px + 20px) = altezza header, come si può vedere facendo inspect sul sito
+       138.5px = altezza footer
+
+    */
+
+    
+}
+
+hr{
+
+    width: 0.5%;
+    border: 1px solid #0ACE99;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* menu di navigazione del sito, dentro il tag nav */
+nav{
+    text-align: center;
+    /*padding: 0; */
+    
+}
+
+/* Elementi li del tag nav */
+nav li{
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 5px;
+   
+    
+}
+
+/* Tutto quello che sta dentro ul */ 
+nav ul{
+    
+    /*margin: 20px 0 0 0;
+    padding: 10px; */
+   
+    
+}
+
+/* sono i link a dentro il tag li */
+nav li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+
+nav li a:hover{
+    background: #0ACE99;
+    
+}
+
+
+/******************** hero banner *******************/
+
+#hero{
+
+    position: relative;
+}
+
+#hero::after{
+
+    background:  linear-gradient(to bottom, #000, transparent),
+                 url("../images/nature.jpg") no-repeat center / cover;
+
+    content: '';
+    width: 100%;
+    height: 700px;
+    position: absolute;
+    top: 0;
+    margin-top: -200px;
+    transform: skew(0deg, -10deg);
+    z-index: -10;
+
+}
+
+#hero .hero-caption{
+
+    text-align: center;
+    padding: 200px 0;
+    color: #fff;
+
+}
+
+#hero .hero-caption a{
+
+    text-transform: none;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+}
+
+#hero h1{
+
+    color: #fff;
+    text-shadow: 4px 4px 4px #ff0000;
+    opacity:0;
+    animation: fade-out .5s 3s ease-in forwards;
+}
+
+#hero h2{
+    padding-bottom: 15px;
+    text-shadow: 6px 6px 10px #4286f4;
+    opacity: 0;
+    animation: fade-out-h2 .5s 2s ease-in forwards;
+}
+
+
+/***********************************************************/
+
+#hero .btn{
+
+    
+    display: inline-block;
+    background: #373B44;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 15px;
+    width: 10%;
+    transition: .4s;
+    opacity: 0;
+    animation: fade-in .5s 2s ease-in forwards;
+}
+
+#hero .btn:hover{
+
+    background: #0575E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************************* GALLERY ******************************************/
+
+/* Sezione gallery del sito, presente nel file index.html */
+#gallery{
+    
+    padding: 40px 0;
+}
+
+.gallery{
+
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 20px rgba(0,0,0, .5);
+    border-radius: 30px;
+    padding: 70px;
+    background: #fff;
+    width: 60%;
+    margin: -180px auto;
+    margin-bottom: 30px;
+
+
+}
+
+/* Immagini della sezione gallery, nel file index.html */
+#gallery img{
+    width: 80%;
+    box-shadow: 4px 4px 10px #bfbfbf;
+}
+
+
+
+
+
+
+
+/*
+  !!IMPORTANTISSIMO!!
+ 
+   Per ottenere il layout a due colonne impostiamo float:left 
+   e larghezza (width) a tutti gli item presenti nella gallery.
+                   
+*/
+ 
+
+
+/** Item contenenti le immagini del sito, posti nel file index.html  **/
+
+
+#gallery .item{
+
+    padding-left: 70px;
+    margin-bottom: 60px;
+    
+}
+
+
+
+
+
+
+/*****************************************************************************/
+
+
+
+
+
+/******** ABOUT **********/
+
+#about{
+    padding: 100px 0;
+    background:  #e6e6e6 url("../images/nature2.jpg") no-repeat fixed center / cover;
+
+
+
+
+   
+    
+    
+    
+}
+
+.about{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 70px;
+    
+}
+
+
+
+
+#about img{
+    border-radius: 100%;
+    padding: 15px 0;
+}
+
+/* Immagine della sezione about, presente nel file about.html */
+#about img{
+    width: 40%;
+}
+
+/* Titolo della classe description, dentro la sezione about, presente nel file about.html */
+#about h1{
+    font-size: 2.2rem;
+    color: #000;
+    text-shadow: 4px 4px 4px #fff;
+}
+
+
+/* Paragrafo della classe description della sezione about, presente nel fie about.html */
+.description p{
+    font-size: 30px;
+    font-family: 'Liu Jian Mao Cao', cursive;
+    text-align: center;
+    padding: 0 50px 0 0;
+    text-shadow: 10px 10px 10px  #ffe0b3;
+
+
+}
+
+/*********************************************************************************************************/
+
+
+
+
+
+
+
+
+/*********************************** contact ***************************************/
+
+#contact{
+
+    padding: 50px;
+    width: 70%;
+    margin: 0 auto;
+    font-size: 14px;
+
+}
+
+.contact{
+
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,.5);
+    border-radius: 20px;
+    margin-top: -170px;
+}
+
+
+
+/* tutto quello che sta dentro ul, nella clsse contacts, dentro la sezione contact, presente
+   nel file contact.html */
+#contact ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+/* sono gli elementi li che stanno dentro ul della classe contacts, dentro la sezione contact
+   presente nel file contact.html */
+#contact li{
+    padding: 5px 0;
+}
+
+
+/* con il selettore .material-icons seleziono tutte le icone che  andrò a
+   inserire*/
+
+   
+#contact .material-icons{    /* seleziona la classe .material-icons nella sezione contact */
+
+    float: left;
+}
+
+
+/* link a della classe contacts della sezione contact,
+   che linkano il num di telefono e l'indirizzo mail */
+#contact .contacts a{
+    margin: 3px 0 0 5px;
+    display: inline-block;
+}
+
+/**********************************************************************************/
+
+
+
+
+
+
+
+
+/********************************** contacts ***************************************/
+
+#contact .info, #contact .contacts{ /* si possono richiamare due classi contemporaneamente,
+                                       per avere un codice più corto */
+    
+    width: 50%;
+    padding: 15px;
+}
+
+
+
+
+/* classe contacts della sezione contact, presente nel file contact.html */
+#contact .contacts{
+    float: right;
+    width: 30%;
+}
+
+/* classe info della sezione contact, presente nel file contact.html */
+#contact .info{
+
+    float: left;
+    width: 70%;
+    padding-left: 80px;
+    padding-bottom: 30px;
+
+}
+
+/****************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************************************** CAPTION **************************************************/
+
+/* caption, all'interno della classe social, presente in tutti i file .html */
+#gallery .caption{
+    clear: both;
+    
+    
+   
+}
+
+
+
+
+
+/* parafrafo dentro la classe caption(all'interno della classe social),
+   presente in tutti i file .html */
+#gallery .caption p{
+    font-size:15px;
+    background:  #f2f2f2;
+    display: inline-block;
+    margin-top: -4px;
+    width: 80%;
+    box-shadow: 4px 4px 10px #bfbfbf;
+    padding: 8px;
+
+}
+
+#gallery .caption p:hover{
+    background: #e6e6ff;
+}
+
+/*************************************************************************************************************/
+
+/**************************************** IMAGES ************************************************/
+
+
+/*
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#images{
+    
+
+    padding: 80px 0;
+    
+}
+
+
+
+
+
+.images{
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0,0,0,.4);
+    padding: 70px;
+    border-radius: 30px;
+    
+}
+
+.box{
+   margin: 40px 0;
+   
+    
+}
+
+
+
+
+
+#images p{
+
+    font-size: 15px;
+    width: 80%;
+    margin: -4px 0 0 0;
+    padding: 5px 0 0 0;
+    background: #f2f2f2;
+    box-shadow: 4px 4px 10px #bfbfbf;
+    
+}
+
+#images img{
+
+    box-shadow: 4px 4px 20px #bfbfbf;
+    width: 80%;
+}
+
+#images h1{
+
+    text-align: center;
+    padding-bottom: 30px;
+    font-size: 50px;
+    font-family: 'Great Vibes', cursive;
+    text-shadow: 4px 4px 4px  #99ccff;
+    animation: fade-out-images 2s 1s ease-out;
+    
+}
+
+
+
+
+
+
+
+/*************************************************************************************/
+
+
+
+
+
+/*********************************** IMAGE ********************************************/
+
+
+#image{
+
+    position: relative;
+}
+
+
+
+#image::after{
+
+    background: linear-gradient(to top, #000, transparent),
+                url('../images/sky.jpg') no-repeat fixed center / cover;
+    content: '';
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    z-index: -30;
+
+}
+
+.image{
+
+    display: flex;
+    flex-wrap: wrap;
+    /*background: url('../images/sky.jpg') no-repeat fixed center / cover;*/
+    padding: 200px 0;
+    
+
+}
+
+
+
+#image .image h1{
+
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+#image .image p{
+
+    color: #fff;
+    margin: 0 auto;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***************************************************************************************/
+
+
+/*************************** Video *************************************/
+
+
+
+#video{
+    padding: 60px 0;
+   
+    
+}
+
+
+#video video{
+
+    width: 100%;
+    box-shadow: 0 5px 5px  rgba(0,0,0, .8);
+    border-radius: 8px;
+    
+    
+}
+
+/**************************************************************************/
+
+
+/********************************* VIDEO-BACKGROUND ******************************/
+
+#video-background{
+
+    padding: 190px 0;
+    margin: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#video-background video{
+
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: -20;
+    transform: translateY(-50%);
+    
+   
+    
+}
+
+#video-background .caption{
+
+    text-align: center;
+    color: #fff;
+
+
+}
+
+
+
+
+
+
+
+
+/************************************************************************************/
+
+
+
+
+/********************************************* FOOTER ********************************/
+
+/* footer, dove sono contenuti la classe social(contenente le immagini dei social), e la 
+   caption. Il footer è presente in tutti i file .html */
+footer.main{
+    text-align: center;
+    padding: 20px;
+}
+
+/* Immagini della classe social, dentro il footer. Sono presenti in tutti i file .html */
+footer.main img{
+    width: 70%;
+}
+
+/* Paragrafo dentro la classe caption. E' presente in tutti i file .html */
+footer.main p{
+    font-size: 10px;
+}
+
+/* link (dentro la classe social) che collegano le immagini dei social alla pagina corrispondente dei vari social*/
+footer.main a{
+    display: inline-block;
+}
+
+/**************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media query per schermi di larghezza maggiore di 768 px */
+@media only screen and (min-width: 768px){
+
+   
+
+    /*
+    header{
+        
+        padding: 0;
+    }
+    */
+
+
+
+/* item della sezione gallery. La sezione gallery è contenuta nel file index.html  */
+#gallery .item{
+
+     /*width: 33.3333%; /* 1/3 della larghezza totale della pagina
+                         (che in questo caso è 100%) */
+    
+}
+
+
+
+
+#gallery .item:nth-child(3n + 1){  /* Si riferisce agli elementi 1,4,7... della sezione gallery 
+                                      perchè 3x(0)+1=1, 3x(1)+1= 4, 3x(2)+1=7 ecc... */
+    clear: left;
+}
+
+#images .box{
+
+    width: 33.3333%;
+}
+
+#images .box:nth-child(3n + 1){  /* Si riferisce agli elementi 1,4,7... della sezione gallery 
+    perchè 3x(0)+1=1, 3x(1)+1= 4, 3x(2)+1=7 ecc... */
+    clear: left;
+}
+
+
+
+
+
+
+
+
+/******** ABOUT *********/
+#about .profile-pic{  /* immagine contenuta nella sezione about del file about.html */
+    width: 50%;
+    float: left;
+    padding: 15px;
+    text-align: center;
+}
+
+
+#about .description{  /* classe description, dentro la sezione about, 
+                         contenuta nel file about.html */
+                          
+    width: 50%;
+    float: right;
+    padding: 30px 15px;
+}
+
+
+
+}
+
+/* media query per schermi minori di 992 px */
+@media only screen and (max-width: 991px){
+
+    
+    main{
+
+        padding-top: 87px;
+    }
+
+    
+
+    #hero .btn{
+
+        width: 30%;
+    }
+
+    
+    .logo-container, .logo-container img{
+
+        margin: 0 auto;
+    }
+
+    #about .about{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about .about .description h1{
+        text-align: center;
+    }
+
+    
+    nav{
+
+        padding: 2px;
+
+        background: #00B4DB;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+
+    }
+    
+    .contact{
+
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .info, .contacts{
+
+        margin: 0 auto;
+    }
+
+
+    
+
+}
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media query per schermi di larghezza maggiore di 992px (schermi desktop) */
+@media only screen and (min-width: 992px){
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+   
+
+    nav li a{
+        transition: background .3s;
+    }
+
+    nav li a:hover, nav li a.active{
+        background: #0d9b75;
+        border-radius: 3px; /* la proprietà border-radius serve per arrotondare gli spigoli */
+    }
+
+    #gallery .gallery{
+        width: 80%;
+    }
+
+    #gallery .item{
+        transition: all .5s;
+        width: 50%;
+    }
+
+    #gallery .item:hover{
+        opacity: .7;
+        transform: scale(1.1);
+    }
+
+    #about .profile-pic{
+        width: 50%;
+        padding: 15% 0 0 0;
+    }
+
+    #images .box{
+        transition: all .5s;
+    }
+
+  
+    
+
+    #images .box:hover{
+
+        opacity: .8;
+        transform: translateY(-20px);
+    }
+
+    
+
+    
+
+   
+   
+
+   
+
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media query per schermi con larghezza massima di 767px */
+@media only screen and (max-width: 767px){
+
+    
+
+    /*
+    header{
+
+        padding: 0;
+    }
+
+    */
+
+
+/* Si riferisce agli elementi 1,3,5, 7... 
+   perchè 2x(0)+1= 1, 2x(1)+1= 3, 2x(2)+1= 5, ecc... */
+#gallery .item:nth-child(2n + 1)
+{
+    clear: left;
+}
+
+
+
+
+
+}
+
+/************************* ANIMATIONS ***************/
+@keyframes fade-in{
+
+    0% {
+        opacity: 0;
+
+    }
+
+    100%{
+
+        opacity: 1;
+    }
+
+}
+
+@keyframes fade-out{
+
+    0% {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+
+    100%{
+
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes fade-out-h2{
+
+    0% {
+
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    100%{
+
+        transform: translate(0);
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes fade-out-images{
+
+    0%{
+        transform: translateX(20px);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
