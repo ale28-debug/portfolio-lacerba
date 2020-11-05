@@ -13,14 +13,7 @@ body{
    
 }
 
-html{
 
-    scroll-behavior: smooth; /* scroll della pagina */
-   
-    
-
-    
-}
 
 
 
@@ -278,29 +271,17 @@ nav li a:hover{
 
     
     display: inline-block;
-    background: #373B44;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #f3722c;
     padding: 10px;
     color: #fff;
     text-transform: uppercase;
     border: 0;
     border-radius: 15px;
-    width: 10%;
     transition: .4s;
     opacity: 0;
     animation: fade-in .5s 2s ease-in forwards;
 }
 
-#hero .btn:hover{
-
-    background: #0575E6;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-    
-
-}
 
 
 
